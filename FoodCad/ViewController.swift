@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet
+    var txtNome: UITextField!
+    
+    @IBOutlet
+    var txtSatisfacao: UITextField!
+    
+    @IBAction
+    func addFood(){
+        let comida = txtNome.text
+        let satisfacao = txtSatisfacao.text
+        print("Comida  boa!!!!\(comida) satisfacao \(satisfacao)");
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
 
 }
 
