@@ -14,6 +14,8 @@
 		ED57E0131F8FBBC000F8BA80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED57E0111F8FBBC000F8BA80 /* LaunchScreen.storyboard */; };
 		ED57E01E1F8FBBC000F8BA80 /* FoodCadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E01D1F8FBBC000F8BA80 /* FoodCadTests.swift */; };
 		ED57E0291F8FBBC000F8BA80 /* FoodCadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */; };
+		EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE69FF41FACAA0C002B0797 /* Refeicao.swift */; };
+		EDE69FF71FACAB05002B0797 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE69FF61FACAB05002B0797 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		ED57E0241F8FBBC000F8BA80 /* FoodCadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodCadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCadUITests.swift; sourceTree = "<group>"; };
 		ED57E02A1F8FBBC100F8BA80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDE69FF41FACAA0C002B0797 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
+		EDE69FF61FACAB05002B0797 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,10 @@
 		ED57E0071F8FBBC000F8BA80 /* FoodCad */ = {
 			isa = PBXGroup;
 			children = (
+				EDE69FF31FACA9BA002B0797 /* viewcontroller */,
+				EDE69FF21FACA9AE002B0797 /* views */,
+				EDE69FF11FACA940002B0797 /* model */,
 				ED57E0081F8FBBC000F8BA80 /* AppDelegate.swift */,
-				ED57E00A1F8FBBC000F8BA80 /* ViewController.swift */,
-				ED57E00C1F8FBBC000F8BA80 /* Main.storyboard */,
 				ED57E00F1F8FBBC000F8BA80 /* Assets.xcassets */,
 				ED57E0111F8FBBC000F8BA80 /* LaunchScreen.storyboard */,
 				ED57E0141F8FBBC000F8BA80 /* Info.plist */,
@@ -123,6 +128,31 @@
 				ED57E02A1F8FBBC100F8BA80 /* Info.plist */,
 			);
 			path = FoodCadUITests;
+			sourceTree = "<group>";
+		};
+		EDE69FF11FACA940002B0797 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EDE69FF41FACAA0C002B0797 /* Refeicao.swift */,
+				EDE69FF61FACAB05002B0797 /* Item.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EDE69FF21FACA9AE002B0797 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ED57E00C1F8FBBC000F8BA80 /* Main.storyboard */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		EDE69FF31FACA9BA002B0797 /* viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				ED57E00A1F8FBBC000F8BA80 /* ViewController.swift */,
+			);
+			path = viewcontroller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDE69FF71FACAB05002B0797 /* Item.swift in Sources */,
 				ED57E00B1F8FBBC000F8BA80 /* ViewController.swift in Sources */,
+				EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */,
 				ED57E0091F8FBBC000F8BA80 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
