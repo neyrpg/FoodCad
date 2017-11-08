@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet
     var txtSatisfacao: UITextField?
     
+    var refeicaoController : RefeicaoTableViewController?
+    
     @IBAction
     func addFood(){
         if(txtNome == nil || txtSatisfacao == nil){
@@ -28,6 +30,15 @@ class ViewController: UIViewController {
             let refeicao = Refeicao(nome: nome, felicidade: felicidade)
             
             print("Comida  boa!!!!\(refeicao.nome) satisfacao \(refeicao.felicidade)");
+            
+            if (refeicaoController == nil) {
+                return
+            }
+            refeicaoController?.add(refeicao)
+            
+            if let nav = navigationController {
+                nav.popViewController(animated: true)
+            }
         }
        
       

@@ -10,9 +10,28 @@ import UIKit
 
 class RefeicaoTableViewController : UITableViewController{
     
-    let refeicoes = [Refeicao(nome: "Arroz", felicidade: 5),
+    var refeicoes = [Refeicao(nome: "Arroz", felicidade: 5),
                     Refeicao(nome: "Feijao", felicidade: 4),
                     Refeicao(nome: "Macarrao", felicidade: 3)       ]
+    
+    //forma tradiconal informando o tipo do parametro add(refeicao: refeicao)
+    func add2(refeicao: Refeicao) {
+        print("Adicionando \(refeicao.nome)")
+        refeicoes.append(refeicao)
+        tableView.reloadData()
+    }
+    //dessa forma e preciso apenas passar o objeto add(refeicao)
+    func add(_ refeicao: Refeicao) {
+        print("Adicionando \(refeicao.nome)")
+        refeicoes.append(refeicao)
+        tableView.reloadData()
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "adicionarComida){
+            let view = segue.destination as? ViewController
+            view?.refeicaoController = self
+        }
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return refeicoes.count
