@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RefeicaoTableViewController : UITableViewController{
+class RefeicaoTableViewController : UITableViewController, addRefeicaoProtocol{
     
     var refeicoes = [Refeicao(nome: "Arroz", felicidade: 5),
                     Refeicao(nome: "Feijao", felicidade: 4),
@@ -27,9 +27,9 @@ class RefeicaoTableViewController : UITableViewController{
         tableView.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "adicionarComida){
+        if(segue.identifier == "adicionarComida"){
             let view = segue.destination as? ViewController
-            view?.refeicaoController = self
+            view?.delegate = self
         }
     }
     

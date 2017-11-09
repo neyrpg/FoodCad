@@ -15,6 +15,7 @@
 		ED57E01E1F8FBBC000F8BA80 /* FoodCadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E01D1F8FBBC000F8BA80 /* FoodCadTests.swift */; };
 		ED57E0291F8FBBC000F8BA80 /* FoodCadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */; };
 		ED9BE7821FB1E1D600C9B1CC /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */; };
+		ED9BE7841FB4809000C9B1CC /* addRefeicaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */; };
 		EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE69FF41FACAA0C002B0797 /* Refeicao.swift */; };
 		EDE69FF71FACAB05002B0797 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE69FF61FACAB05002B0797 /* Item.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCadUITests.swift; sourceTree = "<group>"; };
 		ED57E02A1F8FBBC100F8BA80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
+		ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRefeicaoProtocol.swift; sourceTree = "<group>"; };
 		EDE69FF41FACAA0C002B0797 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
 		EDE69FF61FACAB05002B0797 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +156,7 @@
 			children = (
 				ED57E00A1F8FBBC000F8BA80 /* ViewController.swift */,
 				ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */,
+				ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				ED9BE7821FB1E1D600C9B1CC /* RefeicoesTableViewController.swift in Sources */,
 				EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */,
 				ED57E0091F8FBBC000F8BA80 /* AppDelegate.swift in Sources */,
+				ED9BE7841FB4809000C9B1CC /* addRefeicaoProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
