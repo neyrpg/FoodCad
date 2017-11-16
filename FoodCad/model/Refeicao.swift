@@ -12,13 +12,18 @@ class Refeicao {
     
     let nome:String
     let felicidade:Int
-    let itens = Array<Item>()
+    var itens = Array<Item>()
+    
+    init(nome:String, felicidade:Int, itens: Array<Item> = []) {
+        self.nome = nome
+        self.felicidade = felicidade
+        self.itens = itens
+    }
     
     init(nome:String, felicidade:Int) {
         self.nome = nome
         self.felicidade = felicidade
     }
-    
     func todasCalorias() -> Double {
       var total = 0.0
         

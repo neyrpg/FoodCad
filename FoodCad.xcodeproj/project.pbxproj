@@ -14,6 +14,9 @@
 		ED57E0131F8FBBC000F8BA80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED57E0111F8FBBC000F8BA80 /* LaunchScreen.storyboard */; };
 		ED57E01E1F8FBBC000F8BA80 /* FoodCadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E01D1F8FBBC000F8BA80 /* FoodCadTests.swift */; };
 		ED57E0291F8FBBC000F8BA80 /* FoodCadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */; };
+		ED7DA31B1FBA867D00D2608C /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DA3191FBA867D00D2608C /* NewItemViewController.swift */; };
+		ED7DA31C1FBA867D00D2608C /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED7DA31A1FBA867D00D2608C /* NewItemViewController.xib */; };
+		ED7DA3201FBE0B4500D2608C /* addItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DA31F1FBE0B4500D2608C /* addItemProtocol.swift */; };
 		ED9BE7821FB1E1D600C9B1CC /* RefeicoesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */; };
 		ED9BE7841FB4809000C9B1CC /* addRefeicaoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */; };
 		EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE69FF41FACAA0C002B0797 /* Refeicao.swift */; };
@@ -51,6 +54,9 @@
 		ED57E0241F8FBBC000F8BA80 /* FoodCadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodCadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED57E0281F8FBBC000F8BA80 /* FoodCadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCadUITests.swift; sourceTree = "<group>"; };
 		ED57E02A1F8FBBC100F8BA80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED7DA3191FBA867D00D2608C /* NewItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
+		ED7DA31A1FBA867D00D2608C /* NewItemViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
+		ED7DA31F1FBE0B4500D2608C /* addItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addItemProtocol.swift; sourceTree = "<group>"; };
 		ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefeicoesTableViewController.swift; sourceTree = "<group>"; };
 		ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRefeicaoProtocol.swift; sourceTree = "<group>"; };
 		EDE69FF41FACAA0C002B0797 /* Refeicao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refeicao.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				ED57E00C1F8FBBC000F8BA80 /* Main.storyboard */,
+				ED7DA31A1FBA867D00D2608C /* NewItemViewController.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -154,9 +161,11 @@
 		EDE69FF31FACA9BA002B0797 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
+				ED7DA3191FBA867D00D2608C /* NewItemViewController.swift */,
 				ED57E00A1F8FBBC000F8BA80 /* ViewController.swift */,
 				ED9BE7811FB1E1D600C9B1CC /* RefeicoesTableViewController.swift */,
 				ED9BE7831FB4809000C9B1CC /* addRefeicaoProtocol.swift */,
+				ED7DA31F1FBE0B4500D2608C /* addItemProtocol.swift */,
 			);
 			path = viewcontroller;
 			sourceTree = "<group>";
@@ -270,6 +279,7 @@
 			files = (
 				ED57E0131F8FBBC000F8BA80 /* LaunchScreen.storyboard in Resources */,
 				ED57E0101F8FBBC000F8BA80 /* Assets.xcassets in Resources */,
+				ED7DA31C1FBA867D00D2608C /* NewItemViewController.xib in Resources */,
 				ED57E00E1F8FBBC000F8BA80 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,10 +307,12 @@
 			files = (
 				EDE69FF71FACAB05002B0797 /* Item.swift in Sources */,
 				ED57E00B1F8FBBC000F8BA80 /* ViewController.swift in Sources */,
+				ED7DA3201FBE0B4500D2608C /* addItemProtocol.swift in Sources */,
 				ED9BE7821FB1E1D600C9B1CC /* RefeicoesTableViewController.swift in Sources */,
 				EDE69FF51FACAA0C002B0797 /* Refeicao.swift in Sources */,
 				ED57E0091F8FBBC000F8BA80 /* AppDelegate.swift in Sources */,
 				ED9BE7841FB4809000C9B1CC /* addRefeicaoProtocol.swift in Sources */,
+				ED7DA31B1FBA867D00D2608C /* NewItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
