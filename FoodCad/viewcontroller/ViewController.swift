@@ -105,9 +105,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func addItem(_ item: Item) {
         itens.append(item)
-        if let table = tableView {
-            table.reloadData()
-        }
+        tableView?.reloadData()
     }
 }
 

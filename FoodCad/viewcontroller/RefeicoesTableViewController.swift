@@ -42,8 +42,31 @@ class RefeicaoTableViewController : UITableViewController, addRefeicaoProtocol{
         let valor = refeicoes[indexPath.row]
         let celula = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
         celula.textLabel?.text = valor.nome+" - \(valor.felicidade)"
-        
-        
-        
+        let longReconizer = UILongPressGestureRecognizer(target: self, action: #selector(showDetalheLinha))
+        celula.addGestureRecognizer(longReconizer)
         return celula
-    }}
+    }
+    
+    @objc func showDetalheLinha(recognizer : UILongPressGestureRecognizer){
+        if(recognizer.state == UIGestureRecognizerState.began){
+            
+            print("show item inicio")
+            //cast
+            let celula = recognizer.view as! UITableViewCell
+            if let indexPath = tableView.indexPath(for: celula) {
+                let linha = indexPath.row
+                let refeicao = refeicoes[linha]
+                print("Refeicao é: \(refeicao.nome)")
+                
+                //criação de dialog
+                let dialog = UIAlertController(title: "Felicidade", message: "A sua refeição é \(refeicao.nome). \(refeicao.detalhes()) ", preferredStyle: UIAlertControllerStyle.alert)
+                let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+                dialog.addAction(ok)
+                present(dialog, animated: true, completion: nil)
+            }
+            
+            
+        }
+    }
+    
+}

@@ -33,6 +33,14 @@ class Refeicao {
         return total
     }
 
-    
+    func detalhes() -> String {
+        var msg = "Itens: "
+        
+        for item in itens {
+            msg += "\n \(item.nome) = \(item.calorias.description)"
+        }
+        return msg
+        
+    }
     
 }
