@@ -105,7 +105,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func addItem(_ item: Item) {
         itens.append(item)
-        tableView?.reloadData()
+        if let table = tableView {
+            table.reloadData()
+        } else {
+            let alerta = UIAlertController(title: "Erro!", message: "Não foi possível adicionar o item.", preferredStyle: UIAlertControllerStyle.alert)
+            let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+            alerta.addAction(ok)
+            present(alerta, animated: true, completion: nil)
+        }
     }
 }
 

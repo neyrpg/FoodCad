@@ -69,7 +69,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="tableView" destination="csu-JA-Flp" id="2Kz-qx-aJj"/>
+                        <outlet property="tableView" destination="csu-JA-Flp" id="lnP-PK-UvI"/>
                         <outlet property="txtNome" destination="Nc4-tH-4kT" id="ZOu-F6-v6N"/>
                         <outlet property="txtSatisfacao" destination="VLH-Ix-ICg" id="GTd-fj-bDo"/>
                     </connections>
@@ -91,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xxf-uI-zQG" id="leF-h1-slf">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
