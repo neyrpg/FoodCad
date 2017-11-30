@@ -8,7 +8,9 @@
 
 import Foundation
 
-class Refeicao {
+class Refeicao : NSObject, NSCoding{
+   
+    
     
     let nome:String
     let felicidade:Int
@@ -43,4 +45,16 @@ class Refeicao {
         
     }
     
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(nome, forKey : "nome")
+        aCoder.encode(felicidade, forKey: "felicidade")
+        aCoder.encode(itens, forKey: "itens")
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        nome = aDecoder.decodeObject(forKey: "nome") as! String
+        felicidade = aDecoder.decodeInteger(forKey: "felicidade")
+        itens = aDecoder.decodeObject(forKey: "itens") as! Array        
+    }
 }

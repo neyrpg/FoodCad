@@ -37,6 +37,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             
             
+        } else {
+            Alerta(self).show(mensagem: "Erro ao rendereizar tabela")
         }
     }
     
@@ -63,8 +65,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction
     func addFood(){
+        
+       
+        if let refeicao: Refeicao = getRefeicaoFormulario(){
+            if let refeicoes = delegate {
+                refeicoes.add(refeicao)
+                print("Comida  boa!!!!\(refeicao.nome) satisfacao \(refeicao.felicidade) com os itens \(refeicao.itens)");
+                
+                
+                
+                
+            }
+        }
+        
+        if let nav = navigationController {
+            nav.popViewController(animated: true)
+        } else {
+            Alerta(self).show(mensagem: "Não foi possível retornar a tela anterior, mas a refeição foi adicionada")
+        }
+        
+    }
+   
+    func getRefeicaoFormulario() -> Refeicao? {
+       
         if(txtNome == nil || txtSatisfacao == nil){
-            return
+            return nil
         }
         
         let nome:String = txtNome!.text!
@@ -72,27 +97,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let refeicao = Refeicao(nome: nome, felicidade: felicidade, itens : itensSelecionados )
             
-            
-            print("Comida  boa!!!!\(refeicao.nome) satisfacao \(refeicao.felicidade) com os itens \(refeicao.itens)");
-            
-            if (delegate == nil) {
-                return
-            }
-             delegate?.add(refeicao)
-            
-            if let nav = navigationController {
-                nav.popViewController(animated: true)
-            }
+            return refeicao
         }
-       
-      
+        return nil
     }
-   
     
     override func viewDidLoad() {
         let barButton = UIBarButtonItem(title: "Novo Item", style: UIBarButtonItemStyle.plain,
                                         target: self, action: #selector(showNewItem))
         navigationItem.rightBarButtonItem = barButton
+        
+        let diretorios = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentosDir = diretorios[0]
+        let arquivoItens = "\(documentosDir)/itens.data"
+        if let load = NSKeyedUnarchiver.unarchiveObject(withFile: arquivoItens){
+            self.itens = load as! Array<Item>
+        }//TODO Refatorar
+        
+        print(arquivoItens)
+        
     }
 
     @objc func showNewItem(){
@@ -100,19 +123,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let newItem = NewItemViewController(delegate: self)
         if let navigation = navigationController{
             navigation.pushViewController(newItem, animated: true)
+        } else {
+            Alerta(self).show()
+            
         }
     }
     
     func addItem(_ item: Item) {
         itens.append(item)
+        
+        let diretorios = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentosDir = diretorios[0]
+        let arquivoItens = "\(documentosDir)/itens.data"
+        NSKeyedArchiver.archiveRootObject(itens, toFile: arquivoItens)
+        print(arquivoItens)//TODO Refatorar
+        
         if let table = tableView {
             table.reloadData()
         } else {
-            let alerta = UIAlertController(title: "Erro!", message: "Não foi possível adicionar o item.", preferredStyle: UIAlertControllerStyle.alert)
-            let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
-            alerta.addAction(ok)
-            present(alerta, animated: true, completion: nil)
+            Alerta(self).show("Alerta",mensagem: "Não foi possível atualizar a table")
         }
+        //Alerta(self).show(mensagem: "Item Incluído")
     }
 }
 

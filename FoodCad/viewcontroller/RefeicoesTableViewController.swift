@@ -25,7 +25,30 @@ class RefeicaoTableViewController : UITableViewController, addRefeicaoProtocol{
         print("Adicionando \(refeicao.nome)")
         refeicoes.append(refeicao)
         tableView.reloadData()
+        
+        
+        let diretorios = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentosDir = diretorios[0]
+        let arquivoRefeicoes = "\(documentosDir)/refeicoes.data"
+        NSKeyedArchiver.archiveRootObject(refeicoes, toFile: arquivoRefeicoes)
+        print(arquivoRefeicoes)//TODO Refatorar
+        
     }
+    
+    override func viewDidLoad() {
+        let diretorios = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentosDir = diretorios[0]
+        let arquivoRefeicoes = "\(documentosDir)/refeicoes.data"
+        if let load = NSKeyedUnarchiver.unarchiveObject(withFile: arquivoRefeicoes){
+            self.refeicoes = load as! Array<Refeicao>//TODO Refatorar
+            
+        }
+        
+        print(arquivoRefeicoes)
+        
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "adicionarComida"){
             let view = segue.destination as? ViewController
@@ -58,15 +81,19 @@ class RefeicaoTableViewController : UITableViewController, addRefeicaoProtocol{
                 let refeicao = refeicoes[linha]
                 print("Refeicao é: \(refeicao.nome)")
                 
-                //criação de dialog
-                let dialog = UIAlertController(title: "Felicidade", message: "A sua refeição é \(refeicao.nome). \(refeicao.detalhes()) ", preferredStyle: UIAlertControllerStyle.alert)
-                let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
-                dialog.addAction(ok)
-                present(dialog, animated: true, completion: nil)
+               
+                
+                RemoveRefeicaoController(controller: self).show(refeicao: refeicao, handler: { action in
+                    //Closure é implementar diretamente o handler
+                    print("Removendo \(refeicao.nome)")
+                    self.refeicoes.remove(at: linha)
+                    self.tableView.reloadData()
+                })
             }
             
             
         }
     }
+    
     
 }
